@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, Menu, X, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react'; // Using Lucide React for icons
+import Image from 'next/image'; // Importing the optimized Image component
+import { ChevronDown, Menu, X, Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
 
 // Main App component
 export default function App() {
@@ -14,7 +15,6 @@ export default function App() {
   return (
     <div className="bg-white text-gray-900 font-sans antialiased">
       {/* Tailwind CSS configuration (for custom colors) */}
-      {/* This would normally be in tailwind.config.js, but is included here for a single-file example */}
       <style>{`
         .bg-primary { background-color: #dc2824; }
         .text-primary { color: #dc2824; }
@@ -91,7 +91,6 @@ export default function App() {
               {/* Service Card 1 */}
               <div className="bg-white p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full mb-6">
-                  {/* Icon placeholder */}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
@@ -104,7 +103,6 @@ export default function App() {
               {/* Service Card 2 */}
               <div className="bg-white p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full mb-6">
-                  {/* Icon placeholder */}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -117,7 +115,6 @@ export default function App() {
               {/* Service Card 3 */}
               <div className="bg-white p-8 rounded-xl shadow-md transform hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full mb-6">
-                  {/* Icon placeholder */}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5 5 0 0010 0l-3-9m-3 9a5 5 0 01-10 0l-3-9m12 0a5 5 0 00-10 0l-3 9m3 9a5 5 0 01-10 0" />
                   </svg>
@@ -136,7 +133,13 @@ export default function App() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center lg:space-x-12">
               <div className="lg:w-1/2 mb-10 lg:mb-0">
-                <img src="https://placehold.co/800x600/f0f0f0/808080?text=About+Us" alt="Our Team" className="rounded-xl shadow-xl w-full h-auto" />
+                <Image 
+                  src="https://placehold.co/800x600/f0f0f0/808080?text=About+Us" 
+                  alt="Our Team" 
+                  width={800} 
+                  height={600} 
+                  className="rounded-xl shadow-xl w-full h-auto" 
+                />
               </div>
               <div className="lg:w-1/2">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Our Agency</h2>
@@ -168,7 +171,7 @@ export default function App() {
                     </div>
                     <div className="ml-3">
                       <p className="font-semibold text-gray-900">Transparent Reporting</p>
-                      <p className="text-gray-600">We provide clear, honest insights into your campaign's performance.</p>
+                      <p className="text-gray-600">We provide clear, honest insights into your campaign&apos;s performance.</p>
                     </div>
                   </li>
                 </ul>
@@ -183,13 +186,19 @@ export default function App() {
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Recent Work</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Check out some of our latest projects and see the results we've delivered for our clients.
+                Check out some of our latest projects and see the results we&apos;ve delivered for our clients.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Project Card 1 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-                <img src="https://placehold.co/600x400/f0f0f0/808080?text=Project+1" alt="Project 1" className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" />
+                <Image 
+                  src="https://placehold.co/600x400/f0f0f0/808080?text=Project+1" 
+                  alt="Project 1" 
+                  width={600} 
+                  height={400} 
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" 
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Ecommerce Platform</h3>
                   <p className="text-gray-600">A modern and intuitive online store with advanced features.</p>
@@ -197,7 +206,13 @@ export default function App() {
               </div>
               {/* Project Card 2 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-                <img src="https://placehold.co/600x400/f0f0f0/808080?text=Project+2" alt="Project 2" className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" />
+                <Image 
+                  src="https://placehold.co/600x400/f0f0f0/808080?text=Project+2" 
+                  alt="Project 2" 
+                  width={600} 
+                  height={400} 
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" 
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Corporate Website Redesign</h3>
                   <p className="text-gray-600">Revamping a corporate site for better performance and user experience.</p>
@@ -205,7 +220,13 @@ export default function App() {
               </div>
               {/* Project Card 3 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-                <img src="https://placehold.co/600x400/f0f0f0/808080?text=Project+3" alt="Project 3" className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" />
+                <Image 
+                  src="https://placehold.co/600x400/f0f0f0/808080?text=Project+3" 
+                  alt="Project 3" 
+                  width={600} 
+                  height={400} 
+                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-300" 
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Mobile App Development</h3>
                   <p className="text-gray-600">Building a seamless mobile application for a new startup.</p>
@@ -221,7 +242,7 @@ export default function App() {
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Ready to start your next project? Fill out the form below and we'll get back to you shortly.
+                Ready to start your next project? Fill out the form below and we&apos;ll get back to you shortly.
               </p>
             </div>
             <div className="max-w-2xl mx-auto bg-gray-50 p-8 rounded-xl shadow-md">
